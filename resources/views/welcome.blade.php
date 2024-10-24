@@ -33,11 +33,12 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .cta-btn:hover {
             background-color: #48965b;
+            transform: scale(1.05);
         }
 
         /* Header Section */
@@ -67,6 +68,7 @@
         .hero {
             z-index: 2;
             color: rgb(9, 44, 200);
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-title {
@@ -75,129 +77,11 @@
             animation: fadeInDown 1s ease-out;
         }
 
-        @keyframes fadeSlideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px); /* Geser sedikit ke bawah */
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0); /* Kembali ke posisi semula */
-            }
-        }
-
         .hero-subtitle {
             font-size: 24px;
             margin-bottom: 40px;
-            opacity: 0; /* Awalnya tidak terlihat */
-            animation: fadeSlideIn 2s ease-out forwards; /* Animasi muncul dan geser ke atas */
-        }
-
-
-        /* Features Section */
-        .features-section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        .features-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .feature-card {
-            background-color: white;
-            padding: 30px;
-            margin: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            flex-basis: 30%;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card img {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-
-        /* About Section */
-        .about-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 80px 20px;
-            background-color: #fff; /* Latar belakang putih */
-            border-radius: 8px; /* Menambahkan sudut melengkung */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
-        }
-
-        .about-content {
-            max-width: 500px;
-            padding: 20px; /* Memberikan sedikit padding untuk estetika */
-        }
-
-        .about-content h2 {
-            font-size: 36px; /* Ukuran font lebih besar untuk judul */
-            color: #5DB075; /* Warna hijau yang menarik */
-            margin-bottom: 20px;
-        }
-
-        .about-content p {
-            font-size: 18px; /* Ukuran font yang nyaman dibaca */
-            line-height: 1.6; /* Jarak antar baris untuk keterbacaan yang lebih baik */
-            color: #555; /* Warna teks yang lebih lembut */
-        }
-
-        .about-image {
-            flex: 1; /* Mengizinkan gambar untuk mengambil ruang yang sesuai */
-            display: flex;
-            justify-content: center; /* Memusatkan gambar */
-        }
-
-        .about-section img {
-            max-width: 100%; /* Memastikan gambar tidak melampaui batas kontainer */
-            height: auto; /* Mempertahankan proporsi gambar */
-            border-radius: 8px; /* Menambahkan sudut melengkung pada gambar */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut di gambar */
-        }
-
-        /* Contact Section */
-        .contact-section {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-        }
-
-        .contact-form button {
-            margin-top: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            opacity: 0;
+            animation: fadeSlideIn 2s ease-out forwards;
         }
 
         /* Animations */
@@ -225,6 +109,161 @@
             }
         }
 
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .about-content {
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            color: #5DB075;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #5DB075;
+        }
+
+        .contact-form button {
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
         /* Responsiveness */
         @media (max-width: 768px) {
             .features-container {
@@ -233,6 +272,7 @@
 
             .feature-card {
                 flex-basis: 100%;
+                animation: fadeInUp 1s ease-out;
             }
 
             .about-section {
@@ -281,46 +321,26 @@
 
     <section id="about" class="about-section">
         <div class="about-content">
-            <h2>About Us</h2>
-            <p>SaveSmart is your trusted partner in smart financial planning, helping you save more and spend wisely. Our team of experts is dedicated to providing you with the tools and knowledge to manage your finances effectively.</p>
+            <h2>About Our Platform</h2>
+            <p>We provide cutting-edge tools and expert insights to help you manage your finances and achieve your financial goals. Our platform offers budgeting tools, savings goal tracking, and personalized investment advice to help you grow your wealth efficiently.</p>
         </div>
         <div class="about-image">
             <img src="https://img.freepik.com/premium-vector/diverse-group-celebrates-success-business-competition-showcasing-trophies-while-standing-podiums-urban-environment_538213-123486.jpg" alt="Financial Growth">
         </div>
     </section>
-  
+
     <section id="contact" class="contact-section">
-        <h2 class="section-title">Contact Us</h2>
-        <form class="contact-form" id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" >
-            <textarea id="message" placeholder="Your Message" required></textarea>
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit" class="cta-btn">Send Message</button>
         </form>
     </section>
-    
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah form agar tidak di-submit secara default
-    
-            // Ambil nilai dari input form
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-    
-            // Buat pesan WhatsApp dengan inputan form
-            var whatsappMessage = "Halo, aku " + name + ".  " + message;
-    
-            // Buat URL WhatsApp dengan nomor tujuan dan pesan
-            var whatsappUrl = "https://wa.me/6285799352991?text=" + encodeURIComponent(whatsappMessage);
-    
-            // Redirect ke WhatsApp
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 
     <footer>
-        <p>&copy; 2024 SaveSmart. All Rights Reserved.</p>
+        <p>&copy; 2024 Finance Company. All rights reserved.</p>
     </footer>
 </body>
 
